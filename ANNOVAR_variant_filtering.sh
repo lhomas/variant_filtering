@@ -12,7 +12,7 @@ thresholds.
 # This script is designed to be used with the outputs of the Neurogenetics ANNOVAR pipeline.
 # 
 # USAGE: bash select_private_vars.sh \
-# -h /path/to/het.GenomeAnnotationsCombined.txt \
+# -t /path/to/het.GenomeAnnotationsCombined.txt \
 # -x /path/to/ibdAndXl.GenomeAnnotationsCombined.txt \
 # -p population_freq_threshold \
 # -a allele_fraction_threshold \
@@ -20,7 +20,7 @@ thresholds.
 #
 # The script has 6 REQUIRED options.
 # Options:
-# -h	REQUIRED.	het.GenomeAnnotationsCombined.txt output from neurogenetics ANNOVAR pipeline
+# -t	REQUIRED.	het.GenomeAnnotationsCombined.txt output from neurogenetics ANNOVAR pipeline
 # -x	REQUIRED.	ibdAndXl.GenomeAnnotationsCombined.txt output from neurogenetics ANNOVAR pipeline
 # -p	REQUIRED.	Upper minor allele frequency threshold above which variants won't be included (No default, but 1/5000 (0.0002) is a good starting place)
 # -a	REQUIRED.	Upper allele fraction limit for het file, above which variants won't be included 
@@ -36,7 +36,7 @@ thresholds.
 ## Set Variables ##
 while [ "$1" != "" ]; do 
 	case $1 in
-		-h )	shift
+		-t )	shift
 				het=${1}
 				;;
 		-x )	shift
